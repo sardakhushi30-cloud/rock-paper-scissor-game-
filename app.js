@@ -7,7 +7,7 @@ const msg = document.querySelector("#msg");
 const userScorePara = document.querySelector("#user-score");
 const compScorePara = document.querySelector("#comp-score");
 
-// NEW: container for effects
+
 const container = document.querySelector(".game-container");
 
 const genCompChoice = () => {
@@ -20,14 +20,14 @@ const drawGame = () => {
   msg.innerText = "😐 It's a Draw! Try again.";
   msg.style.backgroundColor = "#334155";
 
-  // EFFECT
+ 
   container.classList.remove("win", "lose");
   container.classList.add("draw");
 };
 
 const showWinner = (userWin, userChoice, compChoice) => {
   
-  // REMOVE OLD EFFECTS
+ 
   container.classList.remove("win", "lose", "draw");
 
   if (userWin) {
@@ -37,7 +37,7 @@ const showWinner = (userWin, userChoice, compChoice) => {
     msg.innerText = `🎉 You WIN! ${userChoice} beats ${compChoice}`;
     msg.style.backgroundColor = "#22c55e";
 
-    // EFFECT
+   
     container.classList.add("win");
 
   } else {
@@ -47,7 +47,7 @@ const showWinner = (userWin, userChoice, compChoice) => {
     msg.innerText = `💀 You LOSE! ${compChoice} beats ${userChoice}`;
     msg.style.backgroundColor = "#ef4444";
 
-    // EFFECT
+   
     container.classList.add("lose");
   }
 };
@@ -76,7 +76,7 @@ choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     const userChoice = choice.getAttribute("id");
 
-    // CLICK ANIMATION (extra polish)
+    
     choice.style.transform = "scale(0.9)";
     setTimeout(() => {
       choice.style.transform = "scale(1)";
